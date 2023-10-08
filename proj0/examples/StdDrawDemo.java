@@ -16,7 +16,7 @@ public class StdDrawDemo {
 	public static void drawThree() {
 		/** Sets up the universe so it goes from 
 		  * -100, -100 up to 100, 100 */
-		StdDraw.setScale(-100, 100);
+		StdDraw.setScale(-200, 200);
 
 		/* Clears the drawing window. */
 		StdDraw.clear();
@@ -97,7 +97,7 @@ public class StdDrawDemo {
 	public static void main(String[] args) {
 		
 		drawThree();
-		drawRandom();
-		drawZoom();
+		//drawRandom();
+		//drawZoom();
 	}
 } 
