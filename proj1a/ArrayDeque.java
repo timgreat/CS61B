@@ -54,26 +54,26 @@ public class ArrayDeque <T>{
     public T removeFirst(){
         if (this.size==0) return null;
         T result=this.array[this.first];
-        this.size--;
         if(this.maxSize>=16&&this.size<(0.25*this.maxSize))
             resize(2*this.size);
         this.first=(this.first+1)%this.maxSize;
+        this.size--;
         return result;
     }
     public T removeLast(){
         if (this.size==0) return null;
         T result=this.array[this.last];
-        this.size--;
         if(this.maxSize>=16&&this.size<(0.25*this.maxSize))
             resize(2*this.size);
         this.last=(this.last-1+this.maxSize)%this.maxSize;
+        this.size--;
         return result;
     }
     public T get(int index){
         if(index<0||index>=this.size) return null;
         return this.array[(this.first+index)%this.maxSize];
     }
-    public void resize(int newSize){
+    private void resize(int newSize){
         T[] newArray=(T[]) new Object[newSize];
         for(int i=0;i<this.size;i++){
             newArray[i]=get(i);

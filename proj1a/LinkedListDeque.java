@@ -4,11 +4,11 @@ public class LinkedListDeque <T>{
     private ListNode first;
     private ListNode last;
     private int size;
-    class ListNode{
+    private class ListNode{
         private T item;
         private ListNode next;
         private ListNode front;
-        public ListNode(T item){
+        private ListNode(T item){
             this.item=item;
             this.next=null;
             this.front=null;
@@ -115,7 +115,7 @@ public class LinkedListDeque <T>{
         if(index<0||index>=this.size) return null;
         return  recurisive(index).item;
     }
-    public ListNode recurisive(int index){
+    private ListNode recurisive(int index){
         if(index==0) return this.first;
         return recurisive(index-1).next;
     }
