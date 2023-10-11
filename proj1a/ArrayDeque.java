@@ -16,7 +16,7 @@ public class ArrayDeque <T>{
             this.array[0]=item;
             this.first=this.last=0;
         }else{
-             this.first=(this.first-1)%this.maxSize;
+             this.first=(this.first-1+this.maxSize)%this.maxSize;
              this.array[this.first]=item;
         }
         this.size++;
@@ -66,7 +66,7 @@ public class ArrayDeque <T>{
         this.size--;
         if(this.maxSize>=16&&this.size<(0.25*this.maxSize))
             resize(2*this.size);
-        this.last=(this.last-1)%this.maxSize;
+        this.last=(this.last-1+this.maxSize)%this.maxSize;
         return result;
     }
     public T get(int index){
