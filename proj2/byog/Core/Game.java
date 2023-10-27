@@ -13,7 +13,9 @@ public class Game {
      * Method used for playing a fresh game. The game should start from the main menu.
      */
     public void playWithKeyboard() {
+        
     }
+
 
     /**
      * Method used for autograding and testing the game code. The input string will be a series
@@ -33,6 +35,13 @@ public class Game {
         // drawn if the same inputs had been given to playWithKeyboard().
 
         TETile[][] finalWorldFrame = null;
+        int seed=Integer.valueOf(input.substring(1,5));
+
+        RandomUtils rt=new RandomUtils();
+
+
+
+
         return finalWorldFrame;
     }
 }
